@@ -12,7 +12,20 @@ export async function startGraphQLServer() {
     }
   });
 
-  const server = new ApolloServer({ schema });
+  const server = new ApolloServer({
+    schema,
+    engine: {
+      debugPrintReports: true
+    },
+    formatError: error => {
+      console.log(error);
+      return error;
+    },
+    formatResponse: (response: any) => {
+      console.log(response);
+      return response;
+    }
+  });
 
   const { url } = await server.listen();
   console.log(`🚀  Server ready at ${url}`);
