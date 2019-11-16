@@ -1,15 +1,15 @@
-import { ApolloServer } from "apollo-server";
-import { makeSchema } from "nexus";
-import path from "path";
-import * as PlaylistSchema from "../components/playlist";
-import * as SuggestionsSchema from "../components/suggestions";
-import { configurationService } from "../services/services";
+import { ApolloServer } from 'apollo-server';
+import { makeSchema } from 'nexus';
+import path from 'path';
+import * as PlaylistSchema from '../components/playlist';
+import * as SuggestionsSchema from '../components/suggestions';
+import { configurationService } from '../services/ConfigurationService';
 export async function startGraphQLServer() {
   const schema = makeSchema({
     types: [PlaylistSchema, SuggestionsSchema],
     outputs: {
-      schema: path.join(process.cwd(), "/src/graphql/generated/schema.graphql"),
-      typegen: path.join(process.cwd(), "/src/graphql/generated/typings.ts")
+      schema: path.join(process.cwd(), '/src/graphql/generated/schema.graphql'),
+      typegen: path.join(process.cwd(), '/src/graphql/generated/typings.ts')
     }
   });
 
