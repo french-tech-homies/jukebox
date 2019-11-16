@@ -4,14 +4,18 @@ import './App.css';
 import { theme } from './ui/theme';
 import { ThemeProvider } from '@material-ui/styles';
 import { Home } from './views/Home.view';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { client } from './services/client';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Home />
-      </div>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Home />
+        </div>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 };
 
