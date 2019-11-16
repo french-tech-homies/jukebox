@@ -20,12 +20,21 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
+  Artist: { // root type
+    name: string; // String!
+    song: string; // String!
+  }
   Playlist: { // root type
     description: string; // String!
     id: string; // ID!
     name: string; // String!
   }
   Query: {};
+  Suggestion: { // root type
+    artist: NexusGenRootTypes['Artist']; // Artist!
+    id: string; // ID!
+    submitter: string; // String!
+  }
   String: string;
   Int: number;
   Float: number;
@@ -37,6 +46,10 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
+  Artist: { // field return type
+    name: string; // String!
+    song: string; // String!
+  }
   Playlist: { // field return type
     description: string; // String!
     id: string; // ID!
@@ -45,6 +58,12 @@ export interface NexusGenFieldTypes {
   Query: { // field return type
     playlistByID: NexusGenRootTypes['Playlist']; // Playlist!
     playlists: NexusGenRootTypes['Playlist'][]; // [Playlist!]!
+    suggestions: NexusGenRootTypes['Suggestion'][]; // [Suggestion!]!
+  }
+  Suggestion: { // field return type
+    artist: NexusGenRootTypes['Artist']; // Artist!
+    id: string; // ID!
+    submitter: string; // String!
   }
 }
 
@@ -61,7 +80,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Playlist" | "Query";
+export type NexusGenObjectNames = "Artist" | "Playlist" | "Query" | "Suggestion";
 
 export type NexusGenInputNames = never;
 

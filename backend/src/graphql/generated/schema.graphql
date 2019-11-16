@@ -2,6 +2,11 @@
 ### Do not make changes to this file directly
 
 
+type Artist {
+  name: String!
+  song: String!
+}
+
 type Playlist {
   description: String!
   id: ID!
@@ -11,4 +16,11 @@ type Playlist {
 type Query {
   playlistByID(id: ID!): Playlist!
   playlists: [Playlist!]!
+  suggestions: [Suggestion!]!
+}
+
+type Suggestion {
+  artist: Artist!
+  id: ID!
+  submitter: String!
 }
