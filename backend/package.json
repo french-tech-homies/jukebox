@@ -1,0 +1,45 @@
+{
+  "name": "matron",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "run-p build:*",
+    "start": "run-p watch:*",
+    "build:js": "TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "watch:js": "npm run build:js -- -w --display \"errors-only\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "watch:types": "npm run build:types -- -w >/dev/null"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^6.1.0",
+    "apollo-server": "^2.9.7",
+    "graphql": "^14.5.8",
+    "mongoose": "^5.7.7",
+    "morphism": "^1.12.2",
+    "nexus": "^0.12.0-rc.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.6.0",
+    "@babel/runtime": "^7.7.2",
+    "@types/mongoose": "^5.5.30",
+    "@types/node": "^12.12.5",
+    "@types/webpack": "^4.39.8",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-typescript-metadata": "^0.2.2",
+    "fork-ts-checker-webpack-plugin": "^3.0.1",
+    "nodemon": "^1.19.4",
+    "nodemon-webpack-plugin": "^4.1.1",
+    "npm-run-all": "^4.1.5",
+    "react-dev-utils": "^9.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
