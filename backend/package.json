@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@typegoose/typegoose": "^6.1.0",
+    "@types/dotenv-flow": "^3.0.0",
     "apollo-server": "^2.9.7",
+    "dotenv-flow": "^3.1.0",
     "graphql": "^14.5.8",
     "mongoose": "^5.7.7",
     "morphism": "^1.12.2",
