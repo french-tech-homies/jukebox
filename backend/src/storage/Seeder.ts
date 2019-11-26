@@ -1,6 +1,10 @@
 import { suggestionsRepository, SuggestionModel } from '../components/suggestions/suggestions.repository';
 class Seeder {
-  async seed() {}
+  async seed() {
+    console.log('seeding database...');
+    await this.seedSuggestions();
+    console.log('Database successfully seeded ✅');
+  }
   async seedSuggestions() {
     const suggestions: SuggestionModel[] = [
       { artist: { name: 'Booba', song: 'Friday' }, submitter: { name: 'Julien' } },
