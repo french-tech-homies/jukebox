@@ -8,7 +8,7 @@ export async function startDbConnection() {
     bufferCommands: false,
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
   console.log('✅ Connection to MongoDB established');
   return connection;

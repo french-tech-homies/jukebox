@@ -1,7 +1,7 @@
-import { NexusGenFieldTypes } from "../../graphql/generated/typings";
-import { prop, getModelForClass } from "@typegoose/typegoose";
-import { morphism, createSchema } from "morphism";
-import { Document } from "mongoose";
+import { NexusGenFieldTypes } from '../../graphql/generated/typings';
+import { prop, getModelForClass } from '@typegoose/typegoose';
+import { morphism, createSchema } from 'morphism';
+import { Document } from 'mongoose';
 
 export class PlaylistModel {
   @prop({ required: true })
@@ -13,11 +13,11 @@ export class PlaylistModel {
 export const playlistRepository = getModelForClass(PlaylistModel);
 
 type Source = Document & PlaylistModel;
-type Target = NexusGenFieldTypes["Playlist"];
+type Target = NexusGenFieldTypes['Playlist'];
 export const toPlaylistObject = morphism(
   createSchema<Target, Source>({
-    id: "id",
-    description: "description",
-    name: "name"
+    id: 'id',
+    description: 'description',
+    name: 'name',
   })
 );
