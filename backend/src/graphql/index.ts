@@ -9,20 +9,20 @@ export async function startGraphQLServer() {
     types: [PlaylistSchema, SuggestionsSchema],
     outputs: {
       schema: path.join(process.cwd(), '/src/graphql/generated/schema.graphql'),
-      typegen: path.join(process.cwd(), '/src/graphql/generated/typings.ts')
-    }
+      typegen: path.join(process.cwd(), '/src/graphql/generated/typings.ts'),
+    },
   });
 
   const server = new ApolloServer({
     schema,
     engine: {
-      debugPrintReports: true
+      debugPrintReports: true,
     },
-    ...defineAppoloFormatConfig()
+    ...defineAppoloFormatConfig(),
   });
 
   const { url } = await server.listen({
-    port: configurationService.apolloServerPort
+    port: configurationService.apolloServerPort,
   });
   console.log(`🚀  Server ready at ${url}`);
 }
@@ -37,7 +37,7 @@ function defineAppoloFormatConfig() {
       formatResponse: (response: any) => {
         console.log(response);
         return response;
-      }
+      },
     };
   }
   return null;

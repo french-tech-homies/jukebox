@@ -1,18 +1,18 @@
-import { objectType } from "nexus";
+import { objectType } from 'nexus';
 
 export const Suggestion = objectType({
-  name: "Suggestion",
+  name: 'Suggestion',
   definition(t) {
-    t.id("id");
-    t.string("submitter");
-    t.field("artist", {
+    t.id('id');
+    t.string('submitter');
+    t.field('artist', {
       type: objectType({
-        name: "Artist",
+        name: 'Artist',
         definition(t) {
-          t.string("name");
-          t.string("song");
-        }
-      })
+          t.string('name');
+          t.string('song');
+        },
+      }),
     });
-  }
+  },
 });
