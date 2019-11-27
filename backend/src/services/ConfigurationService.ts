@@ -23,7 +23,7 @@ class ConfigurationService {
     return this.getRequiredEnvironmentVariable('APOLLO_SERVER_PORT');
   }
   isDevEnv() {
-    return process.env.NODE_ENV == 'dev' ? true : false;
+    return process.env.NODE_ENV == 'development' ? true : false;
   }
 }
 export const configurationService = new ConfigurationService();

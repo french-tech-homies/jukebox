@@ -7,6 +7,10 @@ type Artist {
   song: String!
 }
 
+type Mutation {
+  createSuggestion(submitter: String!, url: String!): Suggestion!
+}
+
 type Playlist {
   description: String!
   id: ID!
@@ -23,4 +27,5 @@ type Suggestion {
   artist: Artist!
   id: ID!
   submitter: String!
+  url: String!
 }
