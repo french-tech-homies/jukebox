@@ -5,10 +5,16 @@
   "scripts": {
     "build": "run-p build:*",
     "start": "run-p watch:*",
-    "build:js": "TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "build:js": "TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --mode=production",
     "watch:js": "npm run build:js -- -w --display \"errors-only\"",
+    "build:dev": "run-p build:dev:*",
+    "start:dev": "run-p watch:dev:*",
+    "build:dev:js": "TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --mode=development",
+    "watch:dev:js": "npm run build:dev:js -- -w --display \"errors-only\"",
     "build:types": "tsc --emitDeclarationOnly",
-    "watch:types": "npm run build:types -- -w >/dev/null"
+    "watch:types": "npm run build:types -- -w >/dev/null",
+    "build:dev:types": "tsc --emitDeclarationOnly",
+    "watch:dev:types": "npm run build:dev:types -- -w >/dev/null"
   },
   "dependencies": {
     "@typegoose/typegoose": "^6.1.0",
