@@ -6,7 +6,6 @@ import NodemonPlugin from "nodemon-webpack-plugin";
 
 const webpackconfiguration: webpack.Configuration = {
   target: "node",
-  mode: "development",
   entry: path.resolve(__dirname, "src"),
   output: {
     filename: "index.js",

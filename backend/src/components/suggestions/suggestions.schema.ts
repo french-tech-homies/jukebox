@@ -5,6 +5,7 @@ export const Suggestion = objectType({
   definition(t) {
     t.id('id');
     t.string('submitter');
+    t.string('url');
     t.field('artist', {
       type: objectType({
         name: 'Artist',
