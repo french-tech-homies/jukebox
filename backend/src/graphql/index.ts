@@ -16,7 +16,7 @@ export async function startGraphQLServer() {
 
   const { url } = await server.listen({ port: configurationService.apolloServerPort })
   /* tslint:disable */
-  console.log(`🚀  Server ready at ${url}`)
+  logger.info(`🚀 Server ready at ${url}`)
 }
 
 
