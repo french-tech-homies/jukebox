@@ -4,3 +4,4 @@
 # Read more about conflict resolution here: TODO
 
 20200313204349-base-migration
+20200313210446-add-artist-tracks-relation

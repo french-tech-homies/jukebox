@@ -5,6 +5,6 @@ export const Suggestion = objectType({
   definition(t) {
     t.model.id()
     t.model.submitter()
-    // t.model.track()
+    t.model.track()
   },
 })
