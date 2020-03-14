@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Playlist {
+  id          String  @default(cuid()) @id
+  name        String
+  description String?
+}
+
+model Suggestion {
+  id        String @default(cuid()) @id
+  submitter String
+  track     Track
+}
+
+model Artist {
+  id   String @default(cuid()) @id
+  name String
+}
+
+model Track {
+  id      String      @default(cuid()) @id
+  url     String
+  source  TrackSource
+  artists Artist[]
+}
+
+enum TrackSource {
+  Spotify Youtube
+}

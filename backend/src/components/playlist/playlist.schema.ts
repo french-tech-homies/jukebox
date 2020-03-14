@@ -1,10 +1,10 @@
-import { objectType } from 'nexus';
+import { objectType } from 'nexus'
 
 export const Playlist = objectType({
   name: 'Playlist',
   definition(t) {
-    t.id('id');
-    t.string('name');
-    t.string('description');
+    t.model.id()
+    t.model.description()
+    t.model.name()
   },
-});
+})
