@@ -24,7 +24,9 @@
     "graphql": "^14.5.8",
     "mongoose": "^5.7.7",
     "morphism": "^1.12.2",
-    "nexus": "^0.12.0-rc.4"
+    "nexus": "^0.12.0-rc.4",
+    "winston": "^3.2.1",
+    "winston-elasticsearch": "^0.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -51,7 +53,8 @@
     "ts-node": "^8.4.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
   },
   "husky": {
     "hooks": {

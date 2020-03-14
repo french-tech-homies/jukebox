@@ -4,6 +4,8 @@ import path from 'path';
 import * as PlaylistSchema from '../components/playlist';
 import * as SuggestionsSchema from '../components/suggestions';
 import { configurationService } from '../services/ConfigurationService';
+import { logger } from '../services/logger';
+
 export async function startGraphQLServer() {
   const schema = makeSchema({
     types: [PlaylistSchema, SuggestionsSchema],
@@ -24,18 +26,18 @@ export async function startGraphQLServer() {
   const { url } = await server.listen({
     port: configurationService.apolloServerPort,
   });
-  console.log(`🚀  Server ready at ${url}`);
+  logger.info(`🚀 Server ready at ${url}`);
 }
 
 function defineAppoloFormatConfig() {
   if (configurationService.isDevEnv()) {
     return {
       formatError: (error: Error) => {
-        console.log(error);
+        logger.error("Graphql Error", {error});
         return error;
       },
       formatResponse: (response: any) => {
-        console.log(response);
+        logger.info("Graphql Response", {response});
         return response;
       },
     };
