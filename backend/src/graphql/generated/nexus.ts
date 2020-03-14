@@ -15,12 +15,12 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  ArtistCreateManyWithoutTrackInput: {
+  ArtistCreateManyWithoutTracksInput: {
     // input type
     connect?: NexusGenInputs['ArtistWhereUniqueInput'][] | null // [ArtistWhereUniqueInput!]
-    create?: NexusGenInputs['ArtistCreateWithoutTrackInput'][] | null // [ArtistCreateWithoutTrackInput!]
+    create?: NexusGenInputs['ArtistCreateWithoutTracksInput'][] | null // [ArtistCreateWithoutTracksInput!]
   }
-  ArtistCreateWithoutTrackInput: {
+  ArtistCreateWithoutTracksInput: {
     // input type
     id?: string | null // String
     name: string // String!
@@ -56,7 +56,7 @@ export interface NexusGenInputs {
   }
   TrackCreateWithoutSuggestionsInput: {
     // input type
-    artists?: NexusGenInputs['ArtistCreateManyWithoutTrackInput'] | null // ArtistCreateManyWithoutTrackInput
+    artists?: NexusGenInputs['ArtistCreateManyWithoutTracksInput'] | null // ArtistCreateManyWithoutTracksInput
     id?: string | null // String
     source: NexusGenEnums['TrackSource'] // TrackSource!
     url: string // String!
@@ -84,8 +84,8 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
-  ArtistCreateManyWithoutTrackInput: NexusGenInputs['ArtistCreateManyWithoutTrackInput']
-  ArtistCreateWithoutTrackInput: NexusGenInputs['ArtistCreateWithoutTrackInput']
+  ArtistCreateManyWithoutTracksInput: NexusGenInputs['ArtistCreateManyWithoutTracksInput']
+  ArtistCreateWithoutTracksInput: NexusGenInputs['ArtistCreateWithoutTracksInput']
   ArtistWhereUniqueInput: NexusGenInputs['ArtistWhereUniqueInput']
   PlaylistCreateInput: NexusGenInputs['PlaylistCreateInput']
   PlaylistWhereUniqueInput: NexusGenInputs['PlaylistWhereUniqueInput']
@@ -169,8 +169,8 @@ export interface NexusGenInheritedFields {}
 export type NexusGenObjectNames = 'Mutation' | 'Playlist' | 'Query' | 'Suggestion'
 
 export type NexusGenInputNames =
-  | 'ArtistCreateManyWithoutTrackInput'
-  | 'ArtistCreateWithoutTrackInput'
+  | 'ArtistCreateManyWithoutTracksInput'
+  | 'ArtistCreateWithoutTracksInput'
   | 'ArtistWhereUniqueInput'
   | 'PlaylistCreateInput'
   | 'PlaylistWhereUniqueInput'

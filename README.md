@@ -1,43 +1,38 @@
-# Jukebox
+<h1 align="center">Welcome to the Jukebox 👋</h1>
+<p>
+</p>
 
 Let's spread your musical taste !
 
-## Description
+---
 
-TBD
+- [Usage](#usage)
+- [Usage with no existing database](#usage-with-no-existing-database)
 
-## Start the environment in production mode
+---
 
-### Frontend
+## Usage
 
-```bash
-cd ./frontend && yarn install && yarn start
+```sh
+make start
 ```
 
-### backend
+This command will:
 
-You need to create a `.env` file with your values such as the `MONGO_CONNECTION`
+- Start a local DB on Docker
+- Generate the Prisma Client
+- Start the Frontend and the Backend locally
 
-> For production your file needs to be named `.env.production`
+## Usage with no existing database
 
-```bash
-cd ./backend && yarn install && yarn start
+```sh
+make start-new
 ```
 
-## Start the environment in development mode
+If you running this project for the first time, you might want to run this command once in order to:
 
-### Frontend
-
-```bash
-cd ./frontend && yarn install && yarn start:dev
-```
-
-### backend
-
-You need to create a `.env` file with your values such as the `MONGO_CONNECTION`
-
-> For production your file needs to be named `.env.development`
-
-```bash
-cd ./backend && yarn install && yarn start:dev
-```
+- Start a local DB on Docker
+- Generate the Prisma Client
+- Create the Jukebox DB and apply the migrations
+- Seed the DB
+- Start the Frontend and the Backend locally
