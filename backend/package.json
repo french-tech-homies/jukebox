@@ -1,7 +1,8 @@
 {
-  "name": "matron",
+  "name": "jukebox-backend",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "start": "ts-node-dev --project tsconfig.development.json --tree-kill --no-notify --respawn --transpile-only src/index.ts",
     "generate": "yarn -s run generate:prisma && yarn -s run generate:nexus",
