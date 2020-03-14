@@ -1,5 +1,4 @@
 import { startGraphQLServer } from './graphql'
-import { seedDatabase } from './storage/Seeder'
 import { configurationService } from './services/ConfigurationService'
 ;(async () => {
   console.log('### Starting Jukebox Backend ###')
