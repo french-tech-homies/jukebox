@@ -3,9 +3,12 @@ import webpack from "webpack";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import typescriptFormatter from "react-dev-utils/typescriptFormatter";
 import NodemonPlugin from "nodemon-webpack-plugin";
+import nodeExternals from 'webpack-node-externals';
+
 
 const webpackconfiguration: webpack.Configuration = {
   target: "node",
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   entry: path.resolve(__dirname, "src"),
   output: {
     filename: "index.js",

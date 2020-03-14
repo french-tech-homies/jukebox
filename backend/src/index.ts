@@ -1,11 +1,12 @@
-import { startGraphQLServer } from './graphql'
-import { configurationService } from './services/ConfigurationService'
-;(async () => {
-  console.log('### Starting Jukebox Backend ###')
-  if (configurationService.isDevEnv()) {
-    console.log('### NODE_ENV is DEV ###')
-  }
+import { startGraphQLServer } from './graphql';
+import { configurationService } from './services/ConfigurationService';
+import { logger } from './services/logger';
 
-  console.log('### Starting GraphQL Server ###')
-  await startGraphQLServer()
-})()
+(async () => {
+  logger.info('### Starting Jukebox Backend ###');
+  if (configurationService.isDevEnv()) {
+    logger.info('### NODE_ENV is DEV ###');
+  }
+  logger.info('### Starting GraphQL Server ###');
+  await startGraphQLServer();
+})();
