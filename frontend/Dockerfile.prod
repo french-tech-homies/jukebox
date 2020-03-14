@@ -1,0 +1,42 @@
+## ---- Staged Build: Builder ---- ##
+
+FROM node:10-alpine as deps-builder
+LABEL name jukebox-client
+
+WORKDIR /jukebox-client
+# Install app dependencies
+COPY ./package.json ./yarn.lock ./
+RUN yarn install
+
+
+## ---- Staged Build: frontend ---- ##
+
+FROM deps-builder as builder
+LABEL name jukebox-client-build
+
+WORKDIR /jukebox-client
+COPY . .
+RUN yarn run build
+
+## ---- Staged Build: frontend ---- ##
+FROM nginx:alpine
+
+WORKDIR /jukebox-client
+
+# Nginx config
+RUN rm -rf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx
+COPY run.sh run.sh
+
+LABEL name jukebox-client
+COPY --from=builder /jukebox-client/build  /var/www
+COPY --from=builder /jukebox-client/run.sh  run.sh
+
+RUN chmod +x run.sh
+
+# Add bash
+RUN apk add --no-cache bash
+
+EXPOSE 80
+
+ENTRYPOINT ["/jukebox-client/run.sh"]
