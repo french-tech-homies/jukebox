@@ -4,11 +4,13 @@ import { nexusPrismaPlugin } from 'nexus-prisma'
 
 import * as PlaylistSchema from '../components/playlist'
 import * as SuggestionsSchema from '../components/suggestions'
+import * as TracksSchema from '../components/tracks'
+import * as ArtistsSchema from '../components/artists'
 
 import pkg from '../../package.json'
 
 export const schema = makeSchema({
-  types: [PlaylistSchema, SuggestionsSchema],
+  types: [PlaylistSchema, SuggestionsSchema, TracksSchema, ArtistsSchema],
   plugins: [nexusPrismaPlugin()],
   outputs: {
     schema: path.join(__dirname, '/generated/schema.graphql'),
