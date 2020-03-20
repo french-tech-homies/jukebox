@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "jukebox-monorepo",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"yarn backend\"  \"yarn web\"",
+    "web": "yarn workspace jukebox-web start",
+    "backend": "yarn workspace jukebox-backend start",
+    "backend:seed": "yarn workspace jukebox-backend seed",
+    "prisma:generate": "yarn workspace jukebox-backend generate",
+    "prisma:migration:create": "yarn workspace jukebox-backend migration:create",
+    "prisma:migration:apply": "yarn workspace jukebox-backend migration:apply"
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
