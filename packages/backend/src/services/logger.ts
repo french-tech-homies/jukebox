@@ -3,20 +3,20 @@ import Elasticsearch from 'winston-elasticsearch';
 import { createDeflateRaw } from "zlib";
 
 const esTransportOpts = {
-    level: 'info',
-    clientOpts: {
-      node: "http://localhost:9200",
-      log:"info"
+  level: 'info',
+  clientOpts: {
+    node: 'http://elasticsearch:9200',
+    log: 'info',
   },
-  transformer: (logData:any) => {
+  transformer: (logData: any) => {
     return {
-      "@timestamp": (new Date()).getTime(),
+      '@timestamp': new Date().getTime(),
       severity: logData.level,
       message: `${logData.message}`,
-      fields: logData.meta
+      fields: logData.meta,
     }
+  },
 }
-};
 
 export const logger = winston.createLogger({
     format: winston.format.json(),

@@ -1,0 +1,28 @@
+## ---- Staged Build: Builder ---- ##
+FROM node:10-alpine as deps-builder
+LABEL name jukebox-api
+
+WORKDIR /jukebox-api
+# Install app dependencies
+COPY ./package.json ./yarn.lock ./
+RUN yarn install
+
+
+## ---- Staged Build: backend ---- ## Not doing so much for now
+
+FROM deps-builder as builder
+LABEL name jukebox-api-build
+
+WORKDIR /jukebox-api
+COPY . .
+
+## ---- Staged Build: backend ---- ##
+FROM node
+
+WORKDIR /jukebox-api
+
+COPY --from=builder /jukebox-api  /jukebox-api
+
+EXPOSE 12345
+
+ENTRYPOINT ["run.sh"]
