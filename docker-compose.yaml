@@ -1,19 +1,19 @@
-version: "3"
+version: '3'
 services:
   web:
     build:
-      context: ./frontend
+      context: ./packages/frontend
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
-      - ./frontend:/src
+      - ./packages/frontend:/src
     networks:
       - jukebox
   api:
     build:
-      context: ./backend
+      context: ./packages/backend
     ports:
-      - "12345:12345"
+      - '12345:12345'
     links:
       - db
     networks:
