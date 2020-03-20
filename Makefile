@@ -3,7 +3,7 @@ install:
 
 start-new: install start-db prisma-generate prisma-migration-apply seed-backend
 	yarn start
-	
+
 start: install start-db prisma-generate
 	yarn start
 
@@ -21,3 +21,6 @@ start-db:
 
 stop-services:
 	docker-compose down
+
+start-elk:
+	docker-compose up -d elasticsearch kibana

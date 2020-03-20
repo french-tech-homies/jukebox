@@ -5,7 +5,7 @@ import { createDeflateRaw } from "zlib";
 const esTransportOpts = {
   level: 'info',
   clientOpts: {
-    node: 'http://elasticsearch:9200',
+    node: 'http://localhost:9200',
     log: 'info',
   },
   transformer: (logData: any) => {
