@@ -1,25 +1,5 @@
 version: '3'
 services:
-  web:
-    build:
-      context: ./packages/frontend
-    ports:
-      - '3000:3000'
-    volumes:
-      - ./packages/frontend:/src
-    networks:
-      - jukebox
-  api:
-    build:
-      context: ./packages/backend
-    ports:
-      - '12345:12345'
-    links:
-      - db
-    networks:
-      - jukebox
-    depends_on:
-      - elasticsearch
   db:
     image: postgres:latest
     restart: always
