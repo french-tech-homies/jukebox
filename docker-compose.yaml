@@ -1,5 +1,24 @@
 version: '3'
 services:
+  auth:
+    image: emyann/authz:1.0.1
+    env_file: ./tools/authz.env
+    ports:
+      - '4000:4000'
+    networks:
+      - jukebox
+    depends_on:
+      - auth-db
+  auth-db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    networks:
+      - jukebox
   db:
     image: postgres:latest
     restart: always
