@@ -5,11 +5,11 @@ import { Typography, Box } from '@material-ui/core';
 import { Layout } from '../ui/Layout';
 import { PlaylistsList } from '../components/playlists/PlaylistsList';
 import { Playlist } from '../components/playlists/types';
-import { useQuery } from '@apollo/react-hooks';
-import { GET_PLAYLISTS } from '../services/playlists.service';
+// import { useQuery } from '@apollo/react-hooks';
+// import { GET_PLAYLISTS } from '../services/playlists.service';
 
 export const Home: FC = () => {
-  const { data, loading, error } = useQuery(GET_PLAYLISTS);
+  // const { data, loading, error } = useQuery(GET_PLAYLISTS);
   const [suggestions] = useState<Suggestion[]>([
     { artist: { name: 'Damso', song: 'Autotune' }, submitter: { name: 'Ali' } },
     { artist: { name: 'Dennis Loyd', song: 'Think about it' }, submitter: { name: 'Yann' } },

@@ -1,6 +1,5 @@
 import winston from "winston";
 import Elasticsearch from 'winston-elasticsearch';
-import { createDeflateRaw } from "zlib";
 
 const esTransportOpts = {
   level: 'info',

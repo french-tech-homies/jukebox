@@ -11,7 +11,8 @@
     "generate:nexus": "ts-node --project tsconfig.development.json --transpile-only src/graphql/schema",
     "migration:create": "prisma2 migrate save --experimental",
     "migration:apply": "prisma2 migrate up --experimental",
-    "seed": "tsnd --project tsconfig.development.json prisma/seed"
+    "seed": "tsnd --project tsconfig.development.json prisma/seed",
+    "test":"jest"
   },
   "dependencies": {
     "@prisma/client": "2.0.0-preview023",
@@ -20,10 +21,10 @@
     "dotenv-flow": "^3.1.0",
     "graphql": "^14.5.8",
     "morphism": "^1.12.2",
-    "winston": "^3.2.1",
-    "winston-elasticsearch": "^0.8.5",
     "nexus": "0.12.0-rc.13",
-    "nexus-prisma": "0.11.1"
+    "nexus-prisma": "0.11.1",
+    "winston": "^3.2.1",
+    "winston-elasticsearch": "^0.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -35,6 +36,7 @@
     "@babel/preset-typescript": "^7.6.0",
     "@babel/runtime": "^7.7.2",
     "@types/faker": "^4.1.10",
+    "@types/jest": "^25.1.4",
     "@types/node": "^12.12.5",
     "@types/webpack": "^4.39.8",
     "babel-loader": "^8.0.6",

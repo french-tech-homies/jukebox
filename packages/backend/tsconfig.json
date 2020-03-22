@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2017", "dom"],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noUnusedParameters": true,
@@ -19,7 +19,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es5",
-    "types": ["node", "nexus-prisma-typegen"],
+    "types": ["node", "nexus-prisma-typegen", "jest"],
     "isolatedModules": true
   },
   "include": ["src"]
