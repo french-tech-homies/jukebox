@@ -1,10 +1,10 @@
 install:
 	yarn install
 
-start-new: install start-db prisma-generate prisma-migration-apply seed-backend
+start: install start-db prisma-generate start-auth
 	yarn start
 
-start: install start-db prisma-generate
+start-new: install start-db prisma-generate prisma-migration-apply seed-backend start-auth
 	yarn start
 
 seed-backend:
@@ -18,6 +18,9 @@ prisma-migration-apply:
 
 start-db:
 	docker-compose up -d --remove-orphans db
+
+start-auth:
+	docker-compose up -d --remove-orphans auth
 
 stop-services:
 	docker-compose down
