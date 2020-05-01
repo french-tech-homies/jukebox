@@ -11,9 +11,13 @@
     "backend:seed": "yarn workspace jukebox-backend seed",
     "prisma:generate": "yarn workspace jukebox-backend generate",
     "prisma:migration:create": "yarn workspace jukebox-backend migration:create",
-    "prisma:migration:apply": "yarn workspace jukebox-backend migration:apply"
+    "prisma:migration:apply": "yarn workspace jukebox-backend migration:apply",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
-    "concurrently": "^5.1.0"
-  }
+    "concurrently": "^5.1.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
