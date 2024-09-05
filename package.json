@@ -14,6 +14,6 @@
     "prisma:migration:apply": "yarn workspace jukebox-backend migration:apply"
   },
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^6.2.2"
   }
 }
